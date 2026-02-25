@@ -1,0 +1,96 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 12px auto;
+    padding: 0 12px;
+}
+
+/* --- Control rows --- */
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    flex-wrap: wrap;
+}
+
+.control-row label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.control-row select,
+.control-row input[type="number"] {
+    padding: 4px 8px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 80px;
+}
+
+.control-row select { min-width: 140px; }
+
+.control-row button,
+.file-btn {
+    padding: 5px 14px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.control-row button:hover,
+.file-btn:hover {
+    background: #e8e8e8;
+}
+
+.file-btn { display: inline-block; text-align: center; }
+
+.cb-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* --- Chart / drop zone --- */
+#drop-zone {
+    position: relative;
+    margin-top: 8px;
+    background: #fff;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    min-height: 500px;
+}
+
+#chart {
+    width: 100%;
+    height: 500px;
+}
+
+#drop-overlay {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(59, 130, 246, 0.12);
+    border: 2px dashed #3b82f6;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #3b82f6;
+    pointer-events: none;
+}
+
+#drop-overlay.visible {
+    display: flex;
+}

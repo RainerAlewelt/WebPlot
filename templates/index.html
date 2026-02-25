@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPlot</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Row 1: axis selectors, open button, add-plot toggle -->
+        <div class="control-row">
+            <label for="x-axis">X-Axis</label>
+            <select id="x-axis"></select>
+
+            <label for="y-axis">Y-Axis</label>
+            <select id="y-axis"></select>
+
+            <label class="file-btn">
+                Open
+                <input type="file" id="file-input" accept=".csv,.txt,.dat,.tsv,.tab" hidden>
+            </label>
+
+            <label class="cb-label">
+                <input type="checkbox" id="add-plot" checked> Add plot
+            </label>
+        </div>
+
+        <!-- Row 2: Y range, autoscale, clear, plot -->
+        <div class="control-row">
+            <label for="y-min">Y min</label>
+            <input type="number" id="y-min" value="0">
+
+            <label for="y-max">Y max</label>
+            <input type="number" id="y-max" value="200000">
+
+            <label class="cb-label">
+                <input type="checkbox" id="autoscale" checked> Autoscale
+            </label>
+
+            <button id="btn-clear">Clear</button>
+            <button id="btn-plot">Plot</button>
+        </div>
+
+        <!-- Chart area / drop zone -->
+        <div id="drop-zone">
+            <div id="chart"></div>
+            <div id="drop-overlay">Drop file here</div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
